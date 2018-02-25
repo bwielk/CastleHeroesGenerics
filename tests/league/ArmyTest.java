@@ -51,4 +51,25 @@ public class ArmyTest {
 		assertEquals(0, knightArmy1.getWins());
 		assertEquals(0, knightArmy1.getLosts());
 	}
+	
+	private void addBarbarianSoldiers(){
+		assertEquals(true, barbarianArmy1.add(barbarianOrc1));
+		assertEquals(true, barbarianArmy1.add(barbarianOrc2));
+		assertEquals(true, barbarianArmy1.add(barbarianOrc3));
+		assertEquals(true, barbarianArmy1.add(barbarianTroll1));
+	}
+	
+	@Test
+	public void barbarianArmyStoresBarbarianTypeCreatures(){
+		addBarbarianSoldiers();
+		assertEquals(4, barbarianArmy1.getNumOfUnits());
+	}
+	
+	@Test
+	public void armiesCannotAddTheSameSoldiersTwice(){
+		addBarbarianSoldiers();
+		assertEquals(false, barbarianArmy1.add(barbarianOrc1));
+		assertEquals(false, barbarianArmy1.add(barbarianOrc2));
+		assertEquals(false, barbarianArmy1.add(barbarianOrc3));
+	}
 }
