@@ -17,9 +17,9 @@ public class ArmyTest {
 	private Knight crussader1;
 	private Knight monk1;
 	private Knight monk2;
-	private Army barbarianArmy1;
-	private Army elvenArmy1;
-	private Army knightArmy1;
+	private Army<Barbarian> barbarianArmy1;
+	private Army<Elven> elvenArmy1;
+	private Army <Knight>knightArmy1;
 	
 	@Before
 	public void before(){
@@ -34,9 +34,9 @@ public class ArmyTest {
 		crussader1 = new Crussader();
 		monk1 = new Monk();
 		monk2 = new Monk();
-		barbarianArmy1 = new Army();
-		elvenArmy1 = new Army();
-		knightArmy1 = new Army();
+		barbarianArmy1 = new Army<Barbarian>();
+		elvenArmy1 = new Army<Elven>();
+		knightArmy1 = new Army<Knight>();
 	}
 
 	@Test
@@ -59,17 +59,64 @@ public class ArmyTest {
 		assertEquals(true, barbarianArmy1.add(barbarianTroll1));
 	}
 	
+	private void addKnightSoldiers(){
+		assertEquals(true, knightArmy1.add(crussader1));
+		assertEquals(true, knightArmy1.add(monk1));
+		assertEquals(true, knightArmy1.add(monk2));
+	}
+	
+	private void addElvenSoldiers(){
+		assertEquals(true, elvenArmy1.add(warriorElf1));
+		assertEquals(true, elvenArmy1.add(warriorPegasus1));
+		assertEquals(true, elvenArmy1.add(warriorPegasus2));
+	}
+	
 	@Test
-	public void barbarianArmyStoresBarbarianTypeCreatures(){
+	public void armiesStoreGenericCreatureTypes(){
 		addBarbarianSoldiers();
+		addElvenSoldiers();
+		addKnightSoldiers();
 		assertEquals(4, barbarianArmy1.getNumOfUnits());
+		assertEquals(3, elvenArmy1.getNumOfUnits());
+		assertEquals(3, knightArmy1.getNumOfUnits());
 	}
 	
 	@Test
 	public void armiesCannotAddTheSameSoldiersTwice(){
+		//Barbarian army
 		addBarbarianSoldiers();
 		assertEquals(false, barbarianArmy1.add(barbarianOrc1));
 		assertEquals(false, barbarianArmy1.add(barbarianOrc2));
 		assertEquals(false, barbarianArmy1.add(barbarianOrc3));
+		assertEquals(true, barbarianArmy1.add(new Orc()));
+		assertEquals(5, barbarianArmy1.getNumOfUnits());
+	}
+	
+	@Test(expected = Error.class)
+	public void barbarianArmyCannotAcceptOtherRacesToTheArmy(){
+		barbarianArmy1.add(crussader1);
+		barbarianArmy1.add(monk1);
+		barbarianArmy1.add(monk2#);
+		barbarianArmy1.add(warriorElf1);
+		barbarianArmy1.add(warriorPegasus1);
+		barbarianArmy1.add(warriorPegasus2);
+	}
+	
+	@Test(expected = Error.class)
+	public void elvenArmyCannotAcceptOtherRacesToTheArmy(){
+		elvenArmy1.add(crussader1);
+		elvenArmy1.add(monk1);
+		elvenArmy1.add(barbarianOrc1);
+		elvenArmy1.add(barbarianOrc2);
+		elvenArmy1.add(barbarianTroll1);
+	}
+	
+	@Test(expected = Error.class)
+	public void knightArmyCannotAcceptOtherRacesToTheArmy(){
+		knightArmy1.add(warriorElf1);
+		knightArmy1.add(warriorPegasus1);
+		knightArmy1.add(barbarianOrc1);
+		knightArmy1.add(barbarianOrc2);
+		knightArmy1.add(barbarianTroll1);
 	}
 }
