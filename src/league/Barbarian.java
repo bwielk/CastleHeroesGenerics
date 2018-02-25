@@ -4,7 +4,7 @@ public abstract class Barbarian extends Creature{
 
 	protected boolean counterStrike;
 	
-	public boolean isCounterStrike(){
+	protected boolean isCounterStrike(){
 		return counterStrike;
 	}
 	
