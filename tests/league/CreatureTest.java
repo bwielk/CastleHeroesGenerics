@@ -45,14 +45,27 @@ public class CreatureTest {
 	}
 	
 	@Test
-	public void creaturesCanCounterStrike(){
+	public void barbarianCreaturesCanCounterStrike(){
 		assertEquals(true, barbarianOrc1.isCounterStrike());
 		assertEquals(false, barbarianTroll1.isCounterStrike());
 	}
 	
 	@Test
-	public void creaturesCanBeBlessed(){
+	public void barbarianCreaturesStatsIncreaseWhenCounterStrike(){
+		barbarianOrc1.rage();
+		assertEquals(4, barbarianOrc1.getHitpoints());
+	}
+	
+	@Test(expected = UnsupportedOperationException.class)
+	public void trollsCannotRage(){
+		barbarianTroll1.rage();
+	}
+	
+	@Test
+	public void elvenCreaturesCanBeBlessed(){
 		assertEquals(true, warriorElf1.canBeBlessed());
 		assertEquals(true, warriorPegasus1.canBeBlessed());
 	}
+	
+	
 }
