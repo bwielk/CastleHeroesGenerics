@@ -1,4 +1,3 @@
-
 package league;
 
 public class Troll extends Barbarian {

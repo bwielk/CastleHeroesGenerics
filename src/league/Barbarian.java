@@ -6,7 +6,7 @@ public abstract class Barbarian extends Creature{
 	
 	protected boolean isCounterStrike(){
 		return counterStrike;
-	}
+	};
 	
 	public void rage(){
 		if(isCounterStrike()){
