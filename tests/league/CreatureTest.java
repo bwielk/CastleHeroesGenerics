@@ -84,4 +84,16 @@ public class CreatureTest {
 		assertEquals(30, warriorElf1.getLifePoints());
 		assertEquals(60, warriorPegasus1.getLifePoints());
 	}
+	
+	@Test
+	public void knightCreaturesStatsIncreaseAfterStrenghtening(){
+		crussader1.strenghten();
+		assertEquals(23, crussader1.getLifePoints());
+		assertEquals(15, crussader1.getHitpoints());
+	}
+	
+	@Test(expected = UnsupportedOperationException.class)
+	public void monksCannotBeStrenghtened(){
+		monk1.strenghten();
+	}
 }
