@@ -90,6 +90,21 @@ public class ArmyTest {
 		assertEquals(false, barbarianArmy1.add(barbarianOrc3));
 		assertEquals(true, barbarianArmy1.add(new Orc()));
 		assertEquals(5, barbarianArmy1.getNumOfUnits());
+		//Elven army
+		addElvenSoldiers();
+		assertEquals(false, elvenArmy1.add(warriorElf1));
+		assertEquals(false, elvenArmy1.add(warriorPegasus1));
+		assertEquals(false, elvenArmy1.add(warriorPegasus2));
+		assertEquals(true, elvenArmy1.add(new Pegasus()));
+		assertEquals(true, elvenArmy1.add(new Pegasus()));
+		assertEquals(5, elvenArmy1.getNumOfUnits());
+		//Knight army
+		addKnightSoldiers();
+		assertEquals(false, knightArmy1.add(crussader1));
+		assertEquals(true, knightArmy1.add(new Crussader()));
+		assertEquals(true, knightArmy1.add(new Monk()));
+		assertEquals(true, knightArmy1.add(new Monk()));
+		assertEquals(6, knightArmy1.getNumOfUnits());
 	}
 	
 	@Test(expected = Error.class)
