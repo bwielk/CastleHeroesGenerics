@@ -20,4 +20,13 @@ public class Battle {
 		}
 		return result;
 	}
+	
+	public int calculateArmyHealth(Army army){
+		int result = 0;
+		for(int i=0; i<army.getNumOfSoldiers(); i++){
+			Creature currentSoldier = (Creature) army.getSoldiers().get(i);
+			result += currentSoldier.getLifePoints();
+		}
+		return result;
+	}
 }
