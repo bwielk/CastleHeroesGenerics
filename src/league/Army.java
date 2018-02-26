@@ -6,12 +6,12 @@ public class Army<T extends Creature>{
 	
 	private int wins;
 	private int losts;
-	private ArrayList<T> army;
+	private ArrayList<T> soldiers;
 	
 	public Army(){
 		this.wins = 0;
 		this.losts = 0;
-		this.army = new ArrayList<T>();
+		this.soldiers = new ArrayList<T>();
 	}
 
 	public int getWins() {
@@ -23,14 +23,18 @@ public class Army<T extends Creature>{
 	}
 
 	public boolean add(T creature){
-		if(!army.contains(creature)){
-			army.add(creature);
+		if(!soldiers.contains(creature)){
+			soldiers.add(creature);
 			return true;
 		}
 		return false;
 	}
 	
 	public int getNumOfUnits(){
-		return army.size();
+		return soldiers.size();
+	}
+
+	public Battle startBattle(Army opponent) {
+		return new Battle(this, opponent);
 	}
 }
