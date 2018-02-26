@@ -56,7 +56,14 @@ public class BattleTest {
 	}
 	
 	@Test
-	public void theArmyGetCalculatedStatsAtTheBeginningOfTheWar() {
-		
+	public void armiesGetsCalculatedStatsAtTheBeginningOfTheBattleLifePoints() {
+		assertEquals(75, battle.calculateArmyHealth(elvenArmy1));
+		assertEquals(80, battle.calculateArmyHealth(barbarianArmy1));
+	}
+	
+	@Test
+	public void armiesGetCalculatedStatsAtTheBeginningOfTheBattleHitpoints(){
+		assertEquals(51, battle.calculateArmyHitpoints(elvenArmy1));
+		assertEquals(16, battle.calculateArmyHitpoints(barbarianArmy1));
 	}
 }

@@ -11,4 +11,13 @@ public class Battle {
 		this.army = army2;
 		this.opponent = opponent2;
 	}
+	
+	public int calculateArmyHitpoints(Army army){
+		int result = 0;
+		for(int i=0; i<army.getNumOfSoldiers(); i++){
+			Creature currentSoldier = (Creature) army.getSoldiers().get(i);
+			result += currentSoldier.getHitpoints();
+		}
+		return result;
+	}
 }

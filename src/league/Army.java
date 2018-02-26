@@ -30,8 +30,12 @@ public class Army<T extends Creature>{
 		return false;
 	}
 	
-	public int getNumOfUnits(){
+	public int getNumOfSoldiers(){
 		return soldiers.size();
+	}
+	
+	public ArrayList<T> getSoldiers(){
+		return soldiers;
 	}
 
 	public Battle startBattle(Army opponent) {

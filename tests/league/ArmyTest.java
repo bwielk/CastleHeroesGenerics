@@ -76,9 +76,9 @@ public class ArmyTest {
 		addBarbarianSoldiers();
 		addElvenSoldiers();
 		addKnightSoldiers();
-		assertEquals(4, barbarianArmy1.getNumOfUnits());
-		assertEquals(3, elvenArmy1.getNumOfUnits());
-		assertEquals(3, knightArmy1.getNumOfUnits());
+		assertEquals(4, barbarianArmy1.getNumOfSoldiers());
+		assertEquals(3, elvenArmy1.getNumOfSoldiers());
+		assertEquals(3, knightArmy1.getNumOfSoldiers());
 	}
 	
 	@Test
@@ -89,7 +89,7 @@ public class ArmyTest {
 		assertEquals(false, barbarianArmy1.add(barbarianOrc2));
 		assertEquals(false, barbarianArmy1.add(barbarianOrc3));
 		assertEquals(true, barbarianArmy1.add(new Orc()));
-		assertEquals(5, barbarianArmy1.getNumOfUnits());
+		assertEquals(5, barbarianArmy1.getNumOfSoldiers());
 		//Elven army
 		addElvenSoldiers();
 		assertEquals(false, elvenArmy1.add(warriorElf1));
@@ -97,21 +97,21 @@ public class ArmyTest {
 		assertEquals(false, elvenArmy1.add(warriorPegasus2));
 		assertEquals(true, elvenArmy1.add(new Pegasus()));
 		assertEquals(true, elvenArmy1.add(new Pegasus()));
-		assertEquals(5, elvenArmy1.getNumOfUnits());
+		assertEquals(5, elvenArmy1.getNumOfSoldiers());
 		//Knight army
 		addKnightSoldiers();
 		assertEquals(false, knightArmy1.add(crussader1));
 		assertEquals(true, knightArmy1.add(new Crussader()));
 		assertEquals(true, knightArmy1.add(new Monk()));
 		assertEquals(true, knightArmy1.add(new Monk()));
-		assertEquals(6, knightArmy1.getNumOfUnits());
+		assertEquals(6, knightArmy1.getNumOfSoldiers());
 	}
 	
 	@Test(expected = Error.class)
 	public void barbarianArmyCannotAcceptOtherRacesToTheArmy(){
 		barbarianArmy1.add(crussader1);
 		barbarianArmy1.add(monk1);
-		barbarianArmy1.add(monk2#);
+		barbarianArmy1.add(monk2);
 		barbarianArmy1.add(warriorElf1);
 		barbarianArmy1.add(warriorPegasus1);
 		barbarianArmy1.add(warriorPegasus2);
