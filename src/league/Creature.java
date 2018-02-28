@@ -26,4 +26,8 @@ public abstract class Creature {
 	public void setLifePoints(int number){
 		this.lifepoints = number;
 	}
+
+	public void setHitpoints(int number) {
+		this.hitpoints = number;
+	}
 }
