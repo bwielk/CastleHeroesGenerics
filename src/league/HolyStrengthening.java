@@ -8,7 +8,7 @@ public class HolyStrengthening implements ReinforcementBehaviour {
 			unit.setLifePoints(5 + unit.getLifePoints());
 			unit.setHitpoints(3 + unit.getHitpoints());
 		}else{
-			throw new UnsupportedOperationException();
+			;
 		}
 	}
 }

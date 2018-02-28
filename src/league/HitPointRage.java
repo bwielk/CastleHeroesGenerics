@@ -7,7 +7,7 @@ public class HitPointRage implements ReinforcementBehaviour {
 		if(soldier.isCounterStrike()){
 			soldier.setHitpoints(2*soldier.getHitpoints());
 		}else{
-			throw new UnsupportedOperationException();
+			;
 		}
 	}
 }

@@ -66,10 +66,11 @@ public class CreatureTest {
 		assertEquals(4, barbarianOrc1.getHitpoints());
 	}
 	
+	/*
 	@Test(expected = UnsupportedOperationException.class)
 	public void trollsCannotRage(){
 		barbarianTroll1.reinforce();
-	}
+	}*/
 	
 	@Test
 	public void elvenCreaturesCanBeBlessed(){
@@ -92,8 +93,9 @@ public class CreatureTest {
 		assertEquals(15, crussader1.getHitpoints());
 	}
 	
+	/*
 	@Test(expected = UnsupportedOperationException.class)
 	public void monksCannotBeStrenghtened(){
 		monk1.reinforce();
-	}
+	}*/
 }

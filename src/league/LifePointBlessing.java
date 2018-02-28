@@ -7,7 +7,7 @@ public class LifePointBlessing implements ReinforcementBehaviour {
 		if(soldier.canBeBlessed()){
 			soldier.setLifePoints(2*soldier.getLifePoints());
 		}else{
-			throw new UnsupportedOperationException();
+			;
 		}
 	}
 }

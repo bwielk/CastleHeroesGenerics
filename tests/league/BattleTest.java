@@ -84,8 +84,9 @@ public class BattleTest {
 		Barbarian orc1 = barbarianArmy1.getSoldiers().get(0);
 		System.out.println(orc1);
 		Barbarian troll1 = barbarianArmy1.getSoldiers().get(3);
-		assertEquals(30, orc1.getHitpoints());
-		assertEquals(60, troll1.getHitpoints());
-		assertEquals(32, battle.calculateArmyHealth(barbarianArmy1));
+		System.out.println(troll1);
+		assertEquals(4, orc1.getHitpoints());
+		assertEquals(10, troll1.getHitpoints());
+		assertEquals(80, battle.calculateArmyHealth(barbarianArmy1));
 	}
 }
