@@ -22,4 +22,8 @@ public abstract class Creature {
 	public boolean isMagicImmune(){
 		return magicImmune;
 	}
+	
+	public void setLifePoints(int number){
+		this.lifepoints = number;
+	}
 }
