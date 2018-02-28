@@ -30,4 +30,6 @@ public abstract class Creature {
 	public void setHitpoints(int number) {
 		this.hitpoints = number;
 	}
+	
+	public abstract void reinforce();
 }

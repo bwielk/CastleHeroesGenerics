@@ -62,13 +62,13 @@ public class CreatureTest {
 	
 	@Test
 	public void barbarianCreaturesStatsIncreaseWhenCounterStrike(){
-		barbarianOrc1.rage();
+		barbarianOrc1.reinforce();
 		assertEquals(4, barbarianOrc1.getHitpoints());
 	}
 	
 	@Test(expected = UnsupportedOperationException.class)
 	public void trollsCannotRage(){
-		barbarianTroll1.rage();
+		barbarianTroll1.reinforce();
 	}
 	
 	@Test
@@ -79,21 +79,21 @@ public class CreatureTest {
 	
 	@Test
 	public void elvenCreaturesStatsIncreseAfterBlessing(){
-		warriorElf1.bless();
-		warriorPegasus1.bless();
+		warriorElf1.reinforce();
+		warriorPegasus1.reinforce();
 		assertEquals(30, warriorElf1.getLifePoints());
 		assertEquals(60, warriorPegasus1.getLifePoints());
 	}
 	
 	@Test
 	public void knightCreaturesStatsIncreaseAfterStrenghtening(){
-		crussader1.strenghten();
+		crussader1.reinforce();
 		assertEquals(23, crussader1.getLifePoints());
 		assertEquals(15, crussader1.getHitpoints());
 	}
 	
 	@Test(expected = UnsupportedOperationException.class)
 	public void monksCannotBeStrenghtened(){
-		monk1.strenghten();
+		monk1.reinforce();
 	}
 }

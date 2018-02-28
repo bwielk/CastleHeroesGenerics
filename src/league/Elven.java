@@ -9,7 +9,7 @@ public abstract class Elven extends Creature {
 		return canBeBlessed;
 	};
 	
-	public void bless(){
+	public void reinforce(){
 		reinforcement.reinforce((Elven)this);
 	}
 }

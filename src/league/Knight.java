@@ -9,7 +9,7 @@ public abstract class Knight extends Creature {
 		return canBeStrengthened;
 	}
 	
-	public void strenghten(){
+	public void reinforce(){
 		reinforcement.reinforce(this);
 	}
 }

@@ -9,7 +9,7 @@ public abstract class Barbarian extends Creature{
 		return counterStrike;
 	};
 	
-	public void rage(){
+	public void reinforce(){
 		reinforcement.reinforce(this);
 	};
 }

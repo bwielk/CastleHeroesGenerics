@@ -66,10 +66,10 @@ public class BattleTest {
 		assertEquals(51, battle.calculateArmyHitpoints(elvenArmy1));
 		assertEquals(16, battle.calculateArmyHitpoints(barbarianArmy1));
 	}
-	/*
+	
 	@Test
 	public void statsIncreaseAfterApplyingABattleBonusToTroopsElvenArmyExample(){
-		elvenArmy1.applyBattleBonus();
+		elvenArmy1.reinforceUnits();
 		Elven elf1 = elvenArmy1.getSoldiers().get(0);
 		System.out.println(elf1);
 		Elven pegasus1 = elvenArmy1.getSoldiers().get(1);
@@ -80,7 +80,7 @@ public class BattleTest {
 	
 	@Test
 	public void statsIncreaseAfterApplyingABattleBonusToTroopsBarbarianArmyExample(){
-		barbarianArmy1.applyBattleBonus();
+		barbarianArmy1.reinforceUnits();
 		Barbarian orc1 = barbarianArmy1.getSoldiers().get(0);
 		System.out.println(orc1);
 		Barbarian troll1 = barbarianArmy1.getSoldiers().get(3);
@@ -88,5 +88,4 @@ public class BattleTest {
 		assertEquals(60, troll1.getHitpoints());
 		assertEquals(32, battle.calculateArmyHealth(barbarianArmy1));
 	}
-	*/
 }

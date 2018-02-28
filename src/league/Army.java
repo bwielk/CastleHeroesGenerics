@@ -41,4 +41,11 @@ public class Army<T extends Creature>{
 	public Battle startBattle(Army opponent) {
 		return new Battle(this, opponent);
 	}
+
+	public void reinforceUnits() {
+		for(int i=0; i<getNumOfSoldiers(); i++){
+			Creature soldier = soldiers.get(i);
+			soldier.reinforce();
+		}
+	}
 }
