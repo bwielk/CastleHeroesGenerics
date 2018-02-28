@@ -1,6 +1,6 @@
 package league;
 
-public class LifePointIncrease implements ReinforcementBehaviour {
+public class LifePointBlessing implements ReinforcementBehaviour {
 
 	public void reinforce(Creature creature) {
 		Elven soldier = (Elven) creature;

@@ -1,6 +1,6 @@
 package league;
 
-public class HitPointIncrease implements ReinforcementBehaviour {
+public class HitPointRage implements ReinforcementBehaviour {
 
 	public void reinforce(Creature creature) {
 		Barbarian soldier = (Barbarian) creature;

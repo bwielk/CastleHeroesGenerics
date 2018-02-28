@@ -3,7 +3,7 @@ package league;
 public abstract class Barbarian extends Creature{
 
 	protected boolean counterStrike;
-	protected ReinforcementBehaviour reinforcement = new HitPointIncrease();
+	protected ReinforcementBehaviour reinforcement = new HitPointRage();
 	
 	protected boolean isCounterStrike(){
 		return counterStrike;
