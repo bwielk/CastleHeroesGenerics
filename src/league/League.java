@@ -1,6 +1,8 @@
 package league;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class League {
 	
@@ -22,13 +24,4 @@ public class League {
 	public ArrayList<Army> getArmies() {
 		return armies;
 	}
-
-	public int calculateRankingPoints(Army army) {
-		int result = 2*army.wins - army.losts;
-		if(result < 0){
-			return 0;
-		}else{
-			return result;
-		}
-	}	
 }

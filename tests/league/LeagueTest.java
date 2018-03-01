@@ -61,16 +61,4 @@ public class LeagueTest extends League {
 		assertEquals(true, league.addArmy(knightArmy1));
 		assertEquals(3, league.getArmies().size());
 	}
-	
-	@Test
-	public void armiesCanGetARankingValue(){
-		Battle battle1 = new Battle(barbarianArmy1, elvenArmy1);
-		battle1.beginBattle();
-		Battle battle2 = new Battle(elvenArmy1, barbarianArmy1);
-		battle2.beginBattle();
-		assertEquals(2, barbarianArmy1.getLosts());
-		assertEquals(2, elvenArmy1.getWins());
-		assertEquals(0, league.calculateRankingPoints(barbarianArmy1));
-		assertEquals(4, league.calculateRankingPoints(elvenArmy1));
-	}
 }

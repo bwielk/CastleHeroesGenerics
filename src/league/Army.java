@@ -2,7 +2,7 @@ package league;
 
 import java.util.ArrayList;
 
-public class Army<T extends Creature>{
+public class Army<T extends Creature> implements Comparable<Army>{
 	
 	protected int wins;
 	protected int losts;
@@ -46,6 +46,25 @@ public class Army<T extends Creature>{
 		for(int i=0; i<getNumOfSoldiers(); i++){
 			Creature soldier = soldiers.get(i);
 			soldier.reinforce();
+		}
+	}
+	
+	public int calculateRankingPoints() {
+		int result = 2*wins - losts;
+		if(result < 0){
+			return 0;
+		}else{
+			return result;
+		}
+	}
+	
+	public int compareTo(Army compareArmy) {
+		if(this.calculateRankingPoints() > compareArmy.calculateRankingPoints()){
+			return 1;
+		}else if(this.calculateRankingPoints() < compareArmy.calculateRankingPoints()){
+			return -1;
+		}else{
+			return 0;
 		}
 	}
 }
