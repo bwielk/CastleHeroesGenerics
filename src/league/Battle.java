@@ -29,4 +29,18 @@ public class Battle {
 		}
 		return result;
 	}
+
+	public void beginBattle(){
+		int armyStats = calculateArmyHealth(army) + calculateArmyHitpoints(army);
+		int opponentStats = calculateArmyHealth(opponent) + calculateArmyHitpoints(opponent);
+		if(armyStats > opponentStats){
+			army.wins ++;
+			opponent.losts ++;
+		}else if(armyStats < opponentStats){
+			army.losts ++;
+			opponent.wins ++;
+		}else{
+			;
+		}
+	}
 }

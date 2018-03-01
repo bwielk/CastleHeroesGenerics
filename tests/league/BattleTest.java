@@ -47,6 +47,10 @@ public class BattleTest {
 		elvenArmy1.add(warriorElf1);//LP 15, HP 5
 		elvenArmy1.add(warriorPegasus1);//LP 30, HP 23
 		elvenArmy1.add(warriorPegasus2);//LP 30, HP 23
+		
+		knightArmy1.add(monk1);
+		knightArmy1.add(monk2);
+		knightArmy1.add(crussader1);
 		battle = barbarianArmy1.startBattle(elvenArmy1);
 	}
 	
@@ -88,5 +92,16 @@ public class BattleTest {
 		assertEquals(4, orc1.getHitpoints());
 		assertEquals(10, troll1.getHitpoints());
 		assertEquals(80, battle.calculateArmyHealth(barbarianArmy1));
+	}
+	
+	@Test
+	public void strongerTeamWinsOverTheWeakerOne(){
+		Battle battle1 = new Battle(barbarianArmy1, elvenArmy1);
+		battle1.beginBattle();
+		assertEquals(1, elvenArmy1.getWins());
+		assertEquals(1, barbarianArmy1.getLosts());
+		Battle battle2 = new Battle(barbarianArmy1, knightArmy1);
+		battle2.beginBattle();
+		assertEquals()
 	}
 }

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Army<T extends Creature>{
 	
-	private int wins;
-	private int losts;
+	protected int wins;
+	protected int losts;
 	private ArrayList<T> soldiers;
 	
 	public Army(){
