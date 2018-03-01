@@ -109,4 +109,14 @@ public class BattleTest {
 		assertEquals(1, barbarianArmy1.getWins());
 		assertEquals(2, barbarianArmy1.getLosts());
 	}
+	
+	@Test
+	public void theSameBattleCannotHappenTwice(){
+		Battle battle1 = new Battle(barbarianArmy1, elvenArmy1);
+		battle1.beginBattle();
+		battle1.beginBattle();
+		battle1.beginBattle();
+		assertEquals(1, elvenArmy1.getWins());
+		assertEquals(1, barbarianArmy1.getLosts());
+	}
 }

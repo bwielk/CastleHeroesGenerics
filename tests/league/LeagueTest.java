@@ -42,10 +42,16 @@ public class LeagueTest extends League {
 	}
 
 	@Test
-	public void armiesAreIncludedInTheLeague() {
+	public void armiesAreIncludedInTheLeague(){
 		assertEquals(true, league.addArmy(barbarianArmy1));
 		assertEquals(true, league.addArmy(elvenArmy1));
 		assertEquals(true, league.addArmy(knightArmy1));
 		assertEquals(3, league.getArmies().size());
+	}
+	
+	@Test
+	public void armiesCanGetARankingValue(){
+		Battle battle1 = new Battle()
+		assertEquals()
 	}
 }
