@@ -48,9 +48,9 @@ public class BattleTest {
 		elvenArmy1.add(warriorPegasus1);//LP 30, HP 23
 		elvenArmy1.add(warriorPegasus2);//LP 30, HP 23
 		
-		knightArmy1.add(monk1);
-		knightArmy1.add(monk2);
-		knightArmy1.add(crussader1);
+		knightArmy1.add(monk1);//LP:18 HP: 10
+		knightArmy1.add(monk2);//LP:18 HP: 10
+		knightArmy1.add(crussader1);//LP: 18 HP: 12
 		battle = barbarianArmy1.startBattle(elvenArmy1);
 	}
 	
@@ -102,6 +102,14 @@ public class BattleTest {
 		assertEquals(1, barbarianArmy1.getLosts());
 		Battle battle2 = new Battle(barbarianArmy1, knightArmy1);
 		battle2.beginBattle();
-		assertEquals()
+		assertEquals(0, knightArmy1.getWins());
+		assertEquals(1, knightArmy1.getLosts());
+		assertEquals(1, barbarianArmy1.getLosts());
+		assertEquals(1, barbarianArmy1.getWins());
+		Battle battle3 = new Battle(barbarianArmy1, elvenArmy1);
+		battle3.beginBattle();
+		assertEquals(2, elvenArmy1.getWins());
+		assertEquals(1, barbarianArmy1.getWins());
+		assertEquals(2, barbarianArmy1.getLosts());
 	}
 }

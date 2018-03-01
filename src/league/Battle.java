@@ -33,6 +33,8 @@ public class Battle {
 	public void beginBattle(){
 		int armyStats = calculateArmyHealth(army) + calculateArmyHitpoints(army);
 		int opponentStats = calculateArmyHealth(opponent) + calculateArmyHitpoints(opponent);
+		System.out.println("Army " + army.getClass() + ": army stats: " + armyStats);
+		System.out.println("Opponent " + opponent.getClass() + ": army stats: " + opponentStats);
 		if(armyStats > opponentStats){
 			army.wins ++;
 			opponent.losts ++;
