@@ -6,6 +6,7 @@ public abstract class Creature {
 	protected int hitpoints;
 	protected int lifepoints;
 	protected boolean magicImmune;
+	protected boolean isGrantedBonus = false;
 	
 	public String getName(){
 		return name;
@@ -29,6 +30,14 @@ public abstract class Creature {
 
 	public void setHitpoints(int number) {
 		this.hitpoints = number;
+	}
+	
+	public boolean isGrantedBonus(){
+		return isGrantedBonus;
+	}
+	
+	public void bonusGranted(){
+		isGrantedBonus = true;
 	}
 	
 	public abstract void reinforce();

@@ -3,10 +3,11 @@ package league;
 public class HolyStrengthening implements ReinforcementBehaviour {
 
 	public void reinforce(Creature creature) {
-		Knight unit = (Knight) creature;
-		if(unit.canBeStrengthened()){
-			unit.setLifePoints(5 + unit.getLifePoints());
-			unit.setHitpoints(3 + unit.getHitpoints());
+		Knight soldier = (Knight) creature;
+		if(soldier.canBeStrengthened() && !soldier.isGrantedBonus()){
+			soldier.setLifePoints(5 + soldier.getLifePoints());
+			soldier.setHitpoints(3 + soldier.getHitpoints());
+			soldier.bonusGranted();
 		}else{
 			;
 		}

@@ -93,6 +93,22 @@ public class CreatureTest {
 		assertEquals(15, crussader1.getHitpoints());
 	}
 	
+	@Test
+	public void creaturesCanBeGrantedBattleBonusJustOnce(){
+		warriorElf1.reinforce();
+		warriorPegasus1.reinforce();
+		barbarianOrc1.reinforce();
+		warriorElf1.reinforce();
+		warriorPegasus1.reinforce();
+		barbarianOrc1.reinforce();
+		crussader1.reinforce();
+		assertEquals(4, barbarianOrc1.getHitpoints());
+		assertEquals(30, warriorElf1.getLifePoints());
+		assertEquals(60, warriorPegasus1.getLifePoints());
+		assertEquals(23, crussader1.getLifePoints());
+		assertEquals(15, crussader1.getHitpoints());
+	}
+	
 	/*
 	@Test(expected = UnsupportedOperationException.class)
 	public void monksCannotBeStrenghtened(){
