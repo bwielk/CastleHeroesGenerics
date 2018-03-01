@@ -2,7 +2,7 @@ package league;
 
 import java.util.ArrayList;
 
-public class League implements Comparable{
+public class League {
 	
 	private ArrayList<Army> armies;
 	
@@ -23,7 +23,12 @@ public class League implements Comparable{
 		return armies;
 	}
 
-	public int compareTo(Object arg0) {
-		int compareArmy
-	}
+	public int calculateRankingPoints(Army army) {
+		int result = 2*army.wins - army.losts;
+		if(result < 0){
+			return 0;
+		}else{
+			return result;
+		}
+	}	
 }
