@@ -165,10 +165,11 @@ public class ArmyTest {
 	
 	@Test
 	public void armiesCanGetComparedInTermsOfTheirRankings(){
+		System.out.println("/////////////// Comparator test /////////////////");
 		populateArmies();
 		Battle battle1 = new Battle(barbarianArmy1, elvenArmy1);
 		battle1.beginBattle();
-		Battle battle2 = new Battle(elvenArmy1, barbarianArmy1);
+		Battle battle2 = new Battle(barbarianArmy1, elvenArmy1);
 		battle2.beginBattle();
 		
 		assertEquals(-1, barbarianArmy1.compareTo(elvenArmy1));
@@ -177,11 +178,28 @@ public class ArmyTest {
 		barbarianArmy1.add(new Troll());
 		barbarianArmy1.add(new Troll());
 		barbarianArmy1.add(new Troll());
+		barbarianArmy1.reinforceUnits();
+		
+		
 		Battle battle3 = new Battle(barbarianArmy1, elvenArmy1);
 		battle3.beginBattle();
+		
+		assertEquals(-1, barbarianArmy1.compareTo(elvenArmy1));
+		assertEquals(1, elvenArmy1.compareTo(barbarianArmy1));
+		
+		
 		Battle battle4 = new Battle(barbarianArmy1, elvenArmy1);
 		battle4.beginBattle();
+		
+		assertEquals(0, barbarianArmy1.compareTo(elvenArmy1));
+		assertEquals(0, elvenArmy1.compareTo(barbarianArmy1));
+		
+		elvenArmy1.reinforceUnits();
 		Battle battle5 = new Battle(barbarianArmy1, elvenArmy1);
 		battle5.beginBattle();
+		
+		assertEquals(1, barbarianArmy1.compareTo(elvenArmy1));
+		assertEquals(-1, elvenArmy1.compareTo(barbarianArmy1));
+		System.out.println("////////////////////////////////////////////////////");
 	}
 }
