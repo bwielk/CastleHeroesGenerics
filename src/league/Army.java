@@ -7,11 +7,17 @@ public class Army<T extends Creature> implements Comparable<Army>{
 	protected int wins;
 	protected int losts;
 	private ArrayList<T> soldiers;
+	private String name;
 	
-	public Army(){
+	public Army(String name){
 		this.wins = 0;
 		this.losts = 0;
 		this.soldiers = new ArrayList<T>();
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
 	}
 
 	public int getWins() {
@@ -59,10 +65,10 @@ public class Army<T extends Creature> implements Comparable<Army>{
 	}
 	
 	public int compareTo(Army compareArmy) {
-		if(this.calculateRankingPoints() > compareArmy.calculateRankingPoints()){
-			return 1;
-		}else if(this.calculateRankingPoints() < compareArmy.calculateRankingPoints()){
+		if(this.calculateRankingPoints() < compareArmy.calculateRankingPoints()){
 			return -1;
+		}else if(this.calculateRankingPoints() > compareArmy.calculateRankingPoints()){
+			return 1;
 		}else{
 			return 0;
 		}

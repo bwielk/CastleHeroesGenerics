@@ -24,4 +24,14 @@ public class League {
 	public ArrayList<Army> getArmies() {
 		return armies;
 	}
+	
+	public void displayRanking(){
+		Collections.sort(armies);
+		Collections.reverse(armies);
+		System.out.println("/////////////////////RANKING/////////////////////");
+		for(int i = 0; i<armies.size(); i++){
+			Army currentArmy = armies.get(i);
+			System.out.println((i+1) + ": " + currentArmy.getName() + " POINTS: " + currentArmy.calculateRankingPoints());
+		}
+	}
 }

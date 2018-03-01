@@ -35,9 +35,9 @@ public class LeagueTest extends League {
 		crussader1 = new Crussader();
 		monk1 = new Monk();
 		monk2 = new Monk();
-		barbarianArmy1 = new Army<Barbarian>();
-		elvenArmy1 = new Army<Elven>();
-		knightArmy1 = new Army<Knight>();
+		barbarianArmy1 = new Army<Barbarian>("Barbarian Army");
+		elvenArmy1 = new Army<Elven>("Elven Army");
+		knightArmy1 = new Army<Knight>("Knight Army");
 		league = new League();
 		
 		barbarianArmy1.add(barbarianOrc1);//LifePoints 10, HitPoints 2
@@ -60,5 +60,33 @@ public class LeagueTest extends League {
 		assertEquals(true, league.addArmy(elvenArmy1));
 		assertEquals(true, league.addArmy(knightArmy1));
 		assertEquals(3, league.getArmies().size());
+	}
+	
+	@Test
+	public void armiesGetRanked(){
+		System.out.println("/////////////// Sorting test /////////////////");
+		System.out.println("Battle 1");
+		barbarianArmy1.reinforceUnits();
+		Battle battle1 = new Battle(barbarianArmy1, elvenArmy1);
+		battle1.beginBattle();
+		System.out.println("Battle 2");
+		Battle battle2 = new Battle(barbarianArmy1, knightArmy1);
+		battle2.beginBattle();
+		System.out.println("Battle 3");
+		knightArmy1.reinforceUnits();
+		Battle battle3 = new Battle(knightArmy1, elvenArmy1);
+		battle3.beginBattle();
+		knightArmy1.add(new Crussader());
+		knightArmy1.add(new Crussader());
+		System.out.println("Battle 4");
+		Battle battle4 = new Battle(knightArmy1, elvenArmy1);
+		battle4.beginBattle();
+		System.out.println("Battle 5");
+		Battle battle5 = new Battle(knightArmy1, elvenArmy1);
+		battle5.beginBattle();
+		assertEquals(true, league.addArmy(barbarianArmy1));
+		assertEquals(true, league.addArmy(elvenArmy1));
+		assertEquals(true, league.addArmy(knightArmy1));
+		league.displayRanking();
 	}
 }

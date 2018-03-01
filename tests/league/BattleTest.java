@@ -35,9 +35,9 @@ public class BattleTest {
 		crussader1 = new Crussader();
 		monk1 = new Monk();
 		monk2 = new Monk();
-		barbarianArmy1 = new Army<Barbarian>();
-		elvenArmy1 = new Army<Elven>();
-		knightArmy1 = new Army<Knight>();
+		barbarianArmy1 = new Army<Barbarian>("Barbarian Army");
+		elvenArmy1 = new Army<Elven>("Elven Army");
+		knightArmy1 = new Army<Knight>("Knight Army");
 		
 		barbarianArmy1.add(barbarianOrc1);//LifePoints 10, HitPoints 2
 		barbarianArmy1.add(barbarianOrc2);//LifePoints 10, HitPoints 2

@@ -34,9 +34,9 @@ public class ArmyTest {
 		crussader1 = new Crussader();
 		monk1 = new Monk();
 		monk2 = new Monk();
-		barbarianArmy1 = new Army<Barbarian>();
-		elvenArmy1 = new Army<Elven>();
-		knightArmy1 = new Army<Knight>();
+		barbarianArmy1 = new Army<Barbarian>("Barbarian Army");
+		elvenArmy1 = new Army<Elven>("Elven Army");
+		knightArmy1 = new Army<Knight>("Knight Army");
 	}
 
 	@Test
@@ -197,6 +197,10 @@ public class ArmyTest {
 		elvenArmy1.reinforceUnits();
 		Battle battle5 = new Battle(barbarianArmy1, elvenArmy1);
 		battle5.beginBattle();
+		
+		knightArmy1.reinforceUnits();
+		knightArmy1.add(new Crussader());
+		knightArmy1.add(new Crussader());
 		
 		assertEquals(1, barbarianArmy1.compareTo(elvenArmy1));
 		assertEquals(-1, elvenArmy1.compareTo(barbarianArmy1));
